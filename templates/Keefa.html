@@ -1,12 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1 class="bg-primary">Tim's short bio!!</h1>
-<p> I was born in Jamaica, and grew up in New York City</p>
-<p>I enjoy meeting new people which is why I helped creat this program at Brandeis University</p>
-<img src = "http://www.cs.brandeis.edu/~tim/alumnicollege07/tim1977.jpg" width="200">
-<p>Here is a link to
-<a href="http://www.cs.brandeis.edu/~tim">my homepage</a>
+<h1 class="bg-primary">Keefa's short bio!!</h1>
+<p> I was born in Jamaica, Montego Bay and grew up in New York where I was able to get accpeted to Brandeis University</p>
+<p>I enjoy watching romance movie and I love to read books</p>
+<img src = "https://lonelyplanetwp.imgix.net/2013/01/BlueLagoon_jamaica_cs-f9fca2fe4e61.jpg?crop=entropy&fit=crop&h=421&sharp=10&vib=20&w=748" width="200">
 </p>
+<form action="/team">
+What is my favorite ice cream?<br>
+<input type="text" name="icecream">
+<br>
+<input type="submit" value="Guess!!">
+</form>
 
 {% endblock %}
