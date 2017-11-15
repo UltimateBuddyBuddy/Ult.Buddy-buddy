@@ -10,9 +10,9 @@ def main():
 def bio():
 	return render_template('team.html')
 
-@app.route('/pitch')
-def pitch():
-	return render_template('pitch.html')
+@app.route('/reserve')
+def reserve():
+	return render_template('reserve.html')
 
 @app.route('/buddy')
 def buddy():
