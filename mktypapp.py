@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request
 app = Flask(__name__)
+from datetime import datetime
+
 
 
 @app.route('/')
@@ -42,9 +44,19 @@ def ali():
 def raven():
 	return render_template('raven.html')
 
-@app.route('/chat')
+messages=[]
+@app.route('/chat',methods=['GET','POST'])
 def chat():
-	return render_template('chat.html')
+	if request.method == 'POST':
+		msg = request.form['msg']
+		who = request.form['who']
+		now = datetime.now()
+		x = {'msg':msg,'now':now,'who':who}
+		messages.insert(0,x) # add msg to the front of the list
+		return render_template("chat.html",messages=messages)
+	else:
+		return render_template("chat.html",messages=[])
+
 
 if __name__ == '__main__':
     app.run('0.0.0.0',port=3000)
