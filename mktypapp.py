@@ -42,5 +42,9 @@ def ali():
 def raven():
 	return render_template('raven.html')
 
+@app.route('/chat')
+def chat():
+	return render_template('chat.html')
+
 if __name__ == '__main__':
     app.run('0.0.0.0',port=3000)
