@@ -44,6 +44,21 @@ def ali():
 def raven():
 	return render_template('raven.html')
 
+buddies=[]
+@app.route('/processRequest',methods=['GET','POST'])
+def processRequest():
+	if request.method == 'GET':
+		a = request.form['activity']
+		#who = request.form['who']
+		now = datetime.now()
+		x = {'activity':a,'time':now}
+		buddies.insert(0,x) # add msg to the front of the list
+		print(buddies)
+		return render_template("chat.html",messages=messages)
+	else:
+		return render_template("chat.html",messages=[])
+
+
 messages=[]
 @app.route('/chat',methods=['GET','POST'])
 def chat():

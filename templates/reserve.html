@@ -12,17 +12,22 @@
 
 </div>
 
-<form action="team">
+<form method="GET" action="processRequest">
   What activity do you need a buddy for?
   <br>
-<select name="waittime">
+<select name="activity">
     <option>no selection</option>
     <option> Gym </option>
     <option> Academics </option>
     <option> Food </option>
   </select>
   <input type="submit">
-
+  <br>
+    
+    Starting Time: <input type="time" name="s_time"><br>
+    Estimated Ending Time: <input type="time" name="e_time"><br>
+    Date: <input type="date" name="e_date"><br>
+    <input type="text" name="location"><br
 
 
 </form>

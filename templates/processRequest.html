@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+{% for msg in message %}
+      {{msg.who}}/{{msg.now}}: <strong>{{msg.msg}}</strong>
+   {% endfor %}
+{% endblock %}
