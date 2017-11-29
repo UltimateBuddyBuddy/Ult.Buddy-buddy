@@ -1,65 +1,66 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="jumbotron">
-  <h1>BUDDY BUDDY FORM</h1>
-  <p class="text-warning">
-    Try to fill out the form as best as you can :)
-  </p>
-</div>
-<div class="text-center">
+ <div class="jumbotron">
+    <h1>BUDDY BUDDY FORM</h1>
+    <p class="text-warning">
+       Try to fill out the form as best as you can :)
+    </p>
+ </div>
+
+
+ <div class="text-center">
   Add pictures and mini bios of everyone in your team to this page.
 
-</div>
+ </div>
 
-<form method="GET" action="processRequest">
-  What activity do you need a buddy for?
-  <br>
-<select name="activity">
-    <option>no selection</option>
-    <option> Gym </option>
-    <option> Academics </option>
-    <option> Food </option>
-  </select>
-  <input type="submit">
+ <form method="GET" action="processRequest">
+   What activity do you need a buddy for?
+   <br>
+   <select name="activity">
+     <option>no selection</option>
+     <option> Gym </option>
+     <option> Academics </option>
+     <option> Food </option>
+   </select>
 
-  <body>
-    <form id="form1" runat="server">
-    <div>
+   <input type="submit">
 
-Days
-<select name='day' id='dayddl'>
-<option value='Monday'>1</option>
-<option value='Tuesday'>2</option>
-<option value='Wendsday'>3</option>
-<option value='Thursday'>4</option>
-<option value='Friday'>5</option>
-<option value='Saturday'>6</option>
-<option value='Sunday'>7</option>
-</select>
 
-Time:hour
-<select name='month' id='monthddl'>
-<option value='1'>1</option>
-<option value='2'>2</option>
-<option value='3'>3</option>
-<option value='4'>4</option>
-<option value='5'>5</option>
-<option value='6'>6</option>
-<option value='7'>7</option>
-<option value='8'>8</option>
-<option value='9'>9</option>
-<option value='10'>10</option>
-<option value='11'>11</option>
-<option value='12'>12</option>
-</select>
-Time:Minutes
-<select name='month' id='monthddl'>
-<option value='00'>00</option>
-<option value='15'>15</option>
-<option value='30'>30</option>
-<option value='45'>45</option>
-</select>
+
+    Days
+    <select name='day' id='dayddl'>
+      <option value='Monday'>1</option>
+      <option value='Tuesday'>2</option>
+      <option value='Wendsday'>3</option>
+      <option value='Thursday'>4</option>
+      <option value='Friday'>5</option>
+      <option value='Saturday'>6</option>
+      <option value='Sunday'>7</option>
+    </select>
+
+    Time:hour
+    <select name='month' id='monthddl'>
+    <option value='1'>1</option>
+    <option value='2'>2</option>
+    <option value='3'>3</option>
+    <option value='4'>4</option>
+    <option value='5'>5</option>
+    <option value='6'>6</option>
+    <option value='7'>7</option>
+    <option value='8'>8</option>
+    <option value='9'>9</option>
+    <option value='10'>10</option>
+    <option value='11'>11</option>
+    <option value='12'>12</option>
+    </select>
+    Time:Minutes
+    <select name='month' id='monthddl'>
+    <option value='00'>00</option>
+    <option value='15'>15</option>
+    <option value='30'>30</option>
+    <option value='45'>45</option>
+    </select>
     </div>
     </form>
 </body>
