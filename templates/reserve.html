@@ -22,12 +22,60 @@
     <option> Food </option>
   </select>
   <input type="submit">
-  <br>
-    
+
+  <body>
+    <form id="form1" runat="server">
+    <div>
+
+Days
+<select name='day' id='dayddl'>
+<option value='Monday'>1</option>
+<option value='Tuesday'>2</option>
+<option value='Wendsday'>3</option>
+<option value='Thursday'>4</option>
+<option value='Friday'>5</option>
+<option value='Saturday'>6</option>
+<option value='Sunday'>7</option>
+</select>
+
+Time:hour
+<select name='month' id='monthddl'>
+<option value='1'>1</option>
+<option value='2'>2</option>
+<option value='3'>3</option>
+<option value='4'>4</option>
+<option value='5'>5</option>
+<option value='6'>6</option>
+<option value='7'>7</option>
+<option value='8'>8</option>
+<option value='9'>9</option>
+<option value='10'>10</option>
+<option value='11'>11</option>
+<option value='12'>12</option>
+</select>
+Time:Minutes
+<select name='month' id='monthddl'>
+<option value='00'>00</option>
+<option value='15'>15</option>
+<option value='30'>30</option>
+<option value='45'>45</option>
+</select>
+    </div>
+    </form>
+</body>
+
+
+
+
+<form method="GET" action="processRequest">
     Starting Time: <input type="time" name="s_time"><br>
     Estimated Ending Time: <input type="time" name="e_time"><br>
     Date: <input type="date" name="e_date"><br>
     <input type="text" name="location"><br
+  <br>
+  </form>
+
+
 
 
 </form>
