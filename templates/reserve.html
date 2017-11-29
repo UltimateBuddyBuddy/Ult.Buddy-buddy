@@ -1,78 +1,79 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="jumbotron">
-  <h1>BUDDY BUDDY FORM</h1>
-  <p class="text-warning">
-    Try to fill out the form as best as you can :)
-  </p>
-</div>
-<div class="text-center">
+ <div class="jumbotron">
+    <h1>BUDDY BUDDY FORM</h1>
+    <p class="text-warning">
+       Try to fill out the form as best as you can :)
+    </p>
+ </div>
+
+
+ <div class="text-center">
   Add pictures and mini bios of everyone in your team to this page.
 
-</div>
+ </div>
 
-<form method="GET" action="processRequest">
-  What activity do you need a buddy for?
-  <br>
-<select name="activity">
-    <option>no selection</option>
-    <option> Gym </option>
-    <option> Academics </option>
-    <option> Food </option>
-  </select>
-  <input type="submit">
+ <form method="GET" action="processRequest">
+   What activity do you need a buddy for?
+   <br>
+   <select name="activity">
+     <option>no selection</option>
+     <option> Gym </option>
+     <option> Academics </option>
+     <option> Food </option>
+   </select>
 
-  <body>
-    <form id="form1" runat="server">
-    <div>
+   <input type="submit">
 
-Days
-<select name='day' id='dayddl'>
-<option value='Monday'>Monday</option>
-<option value='Tuesday'>Tuesday</option>
-<option value='Wednesday'>Wednesday</option>
-<option value='Thursday'>Thursday</option>
-<option value='Friday'>Friday</option>
-<option value='Saturday'>Saturday</option>
-<option value='Sunday'>Sunday</option>
-</select>
 
-Time:Hour
-<select name='month' id='monthddl'>
-<option value='1'>1</option>
-<option value='2'>2</option>
-<option value='3'>3</option>
-<option value='4'>4</option>
-<option value='5'>5</option>
-<option value='6'>6</option>
-<option value='7'>7</option>
-<option value='8'>8</option>
-<option value='9'>9</option>
-<option value='10'>10</option>
-<option value='11'>11</option>
-<option value='12'>12</option>
-<option value='13'>13</option>
-<option value='14'>14</option>
-<option value='15'>15</option>
-<option value='16'>16</option>
-<option value='17'>17</option>
-<option value='18'>18</option>
-<option value='19'>19</option>
-<option value='20'>20</option>
-<option value='21'>21</option>
-<option value='22'>22</option>
-<option value='23'>23</option>
-<option value='24'>24</option>
-</select>
-Time:Minutes
-<select name='month' id='monthddl'>
-<option value='00'>00</option>
-<option value='15'>15</option>
-<option value='30'>30</option>
-<option value='45'>45</option>
-<option value='50'>50</option>
-</select>
+
+    Days
+    <select name='day' id='dayddl'>
+      <option value='Monday'>Monday</option>
+      <option value='Tuesday'>Tuesday</option>
+      <option value='Wednesday'>Wednesday</option>
+      <option value='Thursday'>Thursday</option>
+      <option value='Friday'>Friday</option>
+      <option value='Saturday'>Saturday</option>
+      <option value='Sunday'>Sunday</option>
+    </select>
+
+    Time: Hour (24)
+    <select name='month' id='monthddl'>
+    <option value='1'>1</option>
+    <option value='2'>2</option>
+    <option value='3'>3</option>
+    <option value='4'>4</option>
+    <option value='5'>5</option>
+    <option value='6'>6</option>
+    <option value='7'>7</option>
+    <option value='8'>8</option>
+    <option value='9'>9</option>
+    <option value='10'>10</option>
+    <option value='11'>11</option>
+    <option value='12'>12</option>
+    <option value='13'>13</option>
+    <option value='14'>14</option>
+    <option value='15'>15</option>
+    <option value='16'>16</option>
+    <option value='17'>17</option>
+    <option value='18'>18</option>
+    <option value='19'>19</option>
+    <option value='20'>20</option>
+    <option value='21'>21</option>
+    <option value='22'>22</option>
+    <option value='23'>23</option>
+    <option value='24'>24</option>
+    </select>
+    Time: Minutes
+    <select name='month' id='monthddl'>
+    <option value='00'>00</option>
+    <option value='15'>15</option>
+    <option value='30'>30</option>
+    <option value='45'>45</option>
+    <option value='50'>50</option>
+    </select>
     </div>
     </form>
 </body>
