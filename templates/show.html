@@ -6,8 +6,13 @@
 {% for buddy in buddies %}
 <div class="bg-info">
 	<form method="POST" action="acceptBuddy">
-		<h1 class="bg-warning">{{buddy.activity}} with {{buddy.who}}<h1>
-			<h2>at {{buddy.day}} {{buddy.hour}}:{{buddy.min}} (24 hour time) </h2>
+		<h1 class="bg-warning">{{buddy.activity}} with {{buddy.user}}<br>
+			{{buddy.who}}<h1>
+			at {{buddy.day}}<br>
+			Starting {{buddy.shr}}:{{buddy.smin}} (24 hour time)
+			<br>
+			Ending {{buddy.ehr}}:{{buddy.emin}}
+			<br>
 			(buddy request number {{buddy.id}} was made at {{buddy.time}})
 		<input type="hidden" name="id" value="{{buddy.id}}">
 		<input type="submit" value="I'll be your buddy for this!">

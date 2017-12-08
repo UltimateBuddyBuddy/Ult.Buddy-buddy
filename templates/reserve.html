@@ -1,43 +1,84 @@
 {% extends "base.html" %}
 {% block content %}
 
- <div class="jumbotron">
-    <h1>BUDDY BUDDY FORM</h1>
+<div class="jumbotron">
+  <h1>BuddyBuddy Activity Form</h1>
     <p class="text-warning">
-       Try to fill out the form as best as you can :)
+      Fill Out The Form Make A Buddy Buddy Activity Request 🤝🏿
     </p>
- </div>
-
-
- <div class="text-center">
-  Add pictures and mini bios of everyone in your team to this page.
-
- </div>
-
- <form method="POST" action="processRequest">
-   What activity do you need a buddy for?
-   <select name="activity">
-     <option> Gym </option>
-     <option> Academics </option>
-     <option> Food </option>
-   </select>
+</div>
 
 
 
+<form method="POST" action="/processRequest" style="background-color: #e8e8e8; width: 50%; position: relative; border: 25px solid transparent; margin: auto; padding: 15px; text-align: center; border-radius: 10px;">
+  <label for="choose">Username</label>
+  <input class="form-control" style="width: 150px; position: relative; text-align: center; margin: auto;" id="choose" name="user" placeholder="ex. superpluto99" required>
 
-<br>
-When:
-    <select name='day'>
-      <option value='Monday'>Monday</option>
-      <option value='Tuesday'>Tuesday</option>
-      <option value='Wednesday'>Wednesday</option>
-      <option value='Thursday'>Thursday</option>
-      <option value='Friday'>Friday</option>
-      <option value='Saturday'>Saturday</option>
-      <option value='Sunday'>Sunday</option>
-    </select>
+  <br>
 
-    <select name='hr' >
+  <!-- class="text-center" -->
+  <div><label>What activity do you need a buddy for?<label></div>
+  <textarea class="form-control" name="act" rows="4" style="resize: vertical;" cols="40" maxlength="140"></textarea>
+
+  <br>
+
+  <label for="loc">Activity Location</label>
+  <br>
+  <select name="activity">
+    <option>Select Location</option>
+    <optgroup label="GYM">
+      <option value="GYM-Auerbach Arena">Auerbach Arena</option>
+      <option value="GYM-Indoor Tennis Court">Indoor Tennis Court</option>
+      <option value="GYM-Indoor Track">Indoor Track</option>
+      <option value="GYM-Multipurpose Room">Multipurpose Room</option>
+      <option value="GYM-Outdoors">Outdoors</option>
+      <option value="GYM-Pool">Pool</option>
+      <option value="GYM-Shapiro Gym">Shapiro Gym</option>
+      <option value="GYM-Squash Court">Squash Court</option>
+      </optgroup>
+
+
+    <optgroup label="Academics">
+      <option value="Academics-TYP 6A-TYP: Computer Science">Computer Science</option>
+      <option value="Academics-TYP 1A-TYP: Quantitative Reasoning">Quantitative Reasoning</option>
+      <option value="Academics-TYP 5A-TYP: Social Science">Social Science</option>
+      <option value="Academics-TYP 9A: Writing">Writing</option>
+      </optgroup>
+
+
+       <optgroup label="Dining">
+        <option value="Dining-Einstein Bros. Bagels - Shapiro Student Center">Einstein Bros. Bagels - Shapiro Student Center</option>
+        <option value="Dining-Faculty Club">Faculty Club</option>
+        <option value="Dining-Hoot Market">Hoot Market</option>
+        <option value="Dining-New England Coffee at the Science Center">New England Coffee at the Science Center</option>
+        <option value="Dining-Sherman">Sherman</option>
+        <option value="Dining-Usdan Food Court">Usdan Food Court</option>
+        <option value="Dining-Starbucks at Heller-Brown Cafe">Starbucks at Heller-Brown Cafe</option>
+        </optgroup>
+      </select>
+
+
+  <br>
+  <br>
+
+  <label for="day">Day</label>
+  <br>
+  <select name='day'>
+    <option value='Monday'>Monday</option>
+    <option value='Tuesday'>Tuesday</option>
+    <option value='Wednesday'>Wednesday</option>
+    <option value='Thursday'>Thursday</option>
+    <option value='Friday'>Friday</option>
+    <option value='Saturday'>Saturday</option>
+    <option value='Sunday'>Sunday</option>
+  </select>
+
+  <br>
+  <br>
+
+  <label for="shr">Starting Time: Hour (24) : Minutes</label>
+  <br>
+  <select name='shr'  style="margin-right: 5px;">
     <option value='1'>1</option>
     <option value='2'>2</option>
     <option value='3'>3</option>
@@ -64,23 +105,62 @@ When:
     <option value='24'>24</option>
     </select>
 
-    <select name='min'>
+    <select name='smin'>
     <option value='00'>00</option>
     <option value='15'>15</option>
     <option value='30'>30</option>
     <option value='45'>45</option>
     <option value='50'>50</option>
-    </select>
-    </div>
+  </select>
+
+  <br>
+  <br>
+
+  <label for="ehr">Estimated Ending Time: Hour (24) : Minutes</label>
+  <br>
+  <select name='ehr' id='monthddl' style="margin-right: 5px;">
+    <option value='1'>1</option>
+    <option value='2'>2</option>
+    <option value='3'>3</option>
+    <option value='4'>4</option>
+    <option value='5'>5</option>
+    <option value='6'>6</option>
+    <option value='7'>7</option>
+    <option value='8'>8</option>
+    <option value='9'>9</option>
+    <option value='10'>10</option>
+    <option value='11'>11</option>
+    <option value='12'>12</option>
+    <option value='13'>13</option>
+    <option value='14'>14</option>
+    <option value='15'>15</option>
+    <option value='16'>16</option>
+    <option value='17'>17</option>
+    <option value='18'>18</option>
+    <option value='19'>19</option>
+    <option value='20'>20</option>
+    <option value='21'>21</option>
+    <option value='22'>22</option>
+    <option value='23'>23</option>
+    <option value='24'>24</option>
+  </select>
+
+  <select name='emin' id='monthddl'>
+    <option value='00'>00</option>
+    <option value='15'>15</option>
+    <option value='30'>30</option>
+    <option value='45'>45</option>
+    <option value='50'>50</option>
+  </select>
+
+  <br><br>
+  <input class="btn btn-danger" style="width: 500px;" type="submit"
+    value="Ask for a buddy">
+  <br><br><br>
+
+</form>
+
 <br><br>
-		   <input type="submit" class="btn btn-lg btn-danger" value="Ask for Buddy">
-  </form>
 
-<div >
-
-</div>
-<div >
-
-</div>
 
 {% endblock %}

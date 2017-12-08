@@ -1,0 +1,25 @@
+
+<table class="table" style="width: 75%; margin: auto;">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Activity Description</th>
+      <th>Location</th>
+      <th>Date/Time</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for r in buddyRequests %}
+    <tr>
+      <td><strong>{{r.user}}</strong></td>
+      <td>{{r.act}}</td>
+      <td>{{r.loc}}</td>
+      <td>{{r.wkD}} : {{r.start}} - {{r.end}}</td>
+      <td><<a href="" input class="btn btn-danger" action="rDelete(r)">Delete </a></td>
+
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>

@@ -111,10 +111,38 @@ def main():
 def bio():
 	return render_template('team.html')
 
-@app.route('/reserve')
+buddyRequests = []
+@app.route('/reserve', methods=['GET','POST'])
 @require_login
 def reserve():
-	return render_template('reserve.html')
+	global buddyRequests
+	if request.method == 'POST':
+
+		user = request.form['user']
+		weekday = request.form['wkday']
+		activity = request.form['act']
+		location = request.form['loc']
+		start = request.form['shr'] + ":" + request.form['smin']
+		end = request.form['ehr'] + ":" + request.form['emin']
+		time = datetime.now()
+
+		buddyForm = {
+			'user':user,
+			'act':activity,
+			'loc':location,
+			'wkD': weekday,
+			'start':start,
+			'end':end,
+			'time':time
+		}
+
+		# messages
+		buddyRequests.insert(0, buddyForm) # add form object to the front of the list
+
+		return render_template("reserve.html", buddyRequests=buddyRequests)
+
+	else:
+		return render_template("reserve.html", buddyRequests=buddyRequests)
 
 @app.route('/buddy')
 def buddy():
@@ -155,20 +183,29 @@ def processRequest():
 	if request.method == 'POST':
 		userinfo = session['userinfo']
 		who = userinfo['email']
+
 		activity = request.form['activity']
+		user = request.form['user']
 		day = request.form['day']
-		hr = request.form['hr']
-		min = request.form['min']
+		shr = request.form['shr']
+		smin = request.form['smin']
+		ehr = request.form['ehr']
+		emin = request.form['emin']
+
+
 
 		now = datetime.now()
 
 		x = {
 			'id':buddyCounter,
 			'activity':activity,
+			'user':user,
 			'time':now,
 			'day':day,
-			'hour':hr,
-			'min':min,
+			'shr':shr,
+			'smin':smin,
+			'ehr':ehr,
+			'emin':emin,
 			'who':who
 			}
 		buddyCounter = buddyCounter + 1
