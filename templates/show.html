@@ -2,12 +2,13 @@
 {% block content %}
 
 <h1 class="bg-primary">Buddy Requests!</h1>
+
 {% for buddy in buddies %}
 <div class="bg-info">
 	<form method="POST" action="acceptBuddy">
-		<h1>{{buddy.activity}} with {{buddy.who}}<h1>
+		<h1 class="bg-warning">{{buddy.activity}} with {{buddy.who}}<h1>
 			<h2>at {{buddy.day}} {{buddy.hour}}:{{buddy.min}} (24 hour time) </h2>
-			(buddy request was made at {{buddy.time}})
+			(buddy request number {{buddy.id}} was made at {{buddy.time}})
 		<input type="hidden" name="id" value="{{buddy.id}}">
 		<input type="submit" value="I'll be your buddy for this!">
 	</form>

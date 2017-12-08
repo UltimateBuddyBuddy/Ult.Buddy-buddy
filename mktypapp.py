@@ -151,19 +151,17 @@ buddyCounter=0
 @require_login
 def processRequest():
 	global buddies
-	global buddycounter
+	global buddyCounter
 	if request.method == 'POST':
 		userinfo = session['userinfo']
 		who = userinfo['email']
-		print('a')
 		activity = request.form['activity']
-		print('a')
 		day = request.form['day']
 		hr = request.form['hr']
 		min = request.form['min']
-		print('a')
+
 		now = datetime.now()
-		print('a')
+
 		x = {
 			'id':buddyCounter,
 			'activity':activity,
@@ -173,12 +171,13 @@ def processRequest():
 			'min':min,
 			'who':who
 			}
-		print('a')
+		buddyCounter = buddyCounter + 1
 		buddies.insert(0,x) # add msg to the front of the list
-		print(buddies)
+
 	return render_template("show.html",buddies=buddies)
 
 @app.route('/show')
+@require_login
 def show():
 	global buddies
 	return render_template('show.html',buddies=buddies)
@@ -199,5 +198,5 @@ def chat():
 
 
 if __name__ == '__main__':
-	app.run('0.0.0.0',port=5000)  # development
+	app.run('127.0.0.1',port=5000)  # development
 	#app.run('0.0.0.0',port=5100)  # production
