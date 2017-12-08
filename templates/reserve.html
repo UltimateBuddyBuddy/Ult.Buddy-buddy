@@ -14,22 +14,20 @@
 
  </div>
 
- <form method="GET" action="processRequest">
+ <form method="POST" action="processRequest">
    What activity do you need a buddy for?
-   <br>
    <select name="activity">
-     <option>no selection</option>
      <option> Gym </option>
      <option> Academics </option>
      <option> Food </option>
    </select>
 
-   <input type="submit">
 
 
 
-    Days
-    <select name='day' id='dayddl'>
+<br>
+When:
+    <select name='day'>
       <option value='Monday'>Monday</option>
       <option value='Tuesday'>Tuesday</option>
       <option value='Wednesday'>Wednesday</option>
@@ -39,8 +37,7 @@
       <option value='Sunday'>Sunday</option>
     </select>
 
-    Time: Hour (24)
-    <select name='month' id='monthddl'>
+    <select name='hr' >
     <option value='1'>1</option>
     <option value='2'>2</option>
     <option value='3'>3</option>
@@ -66,8 +63,8 @@
     <option value='23'>23</option>
     <option value='24'>24</option>
     </select>
-    Time: Minutes
-    <select name='month' id='monthddl'>
+
+    <select name='min'>
     <option value='00'>00</option>
     <option value='15'>15</option>
     <option value='30'>30</option>
@@ -75,25 +72,9 @@
     <option value='50'>50</option>
     </select>
     </div>
-    </form>
-</body>
-
-
-
-
-<form method="GET" action="processRequest">
-    Starting Time: <input type="time" name="s_time"><br>
-    Estimated Ending Time: <input type="time" name="e_time"><br>
-    Date: <input type="date" name="e_date"><br>
-    <input type="text" name="location"><br
-  <br>
+<br><br>
+		   <input type="submit" class="btn btn-lg btn-danger" value="Ask for Buddy">
   </form>
-
-
-
-
-</form>
-
 
 <div >
 
