@@ -1,0 +1,24 @@
+  {% extends "base.html" %}
+  {% block content %}
+
+
+ <div class="jumbotron">
+   <h1>Supreme Buddy Buddy Chat</h1>
+   <p class="text-warning">
+     Welcome to the Supreme Buddy Buddy Chat!
+   </p>
+ </div>
+ <form method="POST" action="/chat">
+   Username: <input type="text" name="who"><br>
+   Message: <input type="text" name="msg"><br>
+   <input type="submit">
+ </form>
+ <div>
+
+ {% for msg in messages %}
+  {{msg.who}}/{{msg.now}}: <strong>{{msg.msg}}</strong>
+  <br>
+ {% endfor %}
+ </div>
+
+ {% endblock %}

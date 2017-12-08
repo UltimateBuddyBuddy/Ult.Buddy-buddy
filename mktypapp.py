@@ -3,7 +3,6 @@ app = Flask(__name__)
 from datetime import datetime
 
 
-
 @app.route('/')
 def main():
 	return render_template("main.html")
@@ -12,9 +11,37 @@ def main():
 def bio():
 	return render_template('team.html')
 
-@app.route('/reserve')
+buddyRequests = []
+@app.route('/reserve', methods=['GET','POST'])
 def reserve():
-	return render_template('reserve.html')
+	global buddyRequests
+	if request.method == 'POST':
+
+		user = request.form['user']
+		weekday = request.form['wkday']
+		activity = request.form['act']
+		location = request.form['loc']
+		start = request.form['shr'] + ":" + request.form['smin']
+		end = request.form['ehr'] + ":" + request.form['emin']
+		time = datetime.now()
+
+		buddyForm = {
+			'user':user,
+			'act':activity,
+			'loc':location,
+			'wkD': weekday,
+			'start':start,
+			'end':end,
+			'time':time
+		}
+
+		# messages
+		buddyRequests.insert(0, buddyForm) # add form object to the front of the list
+
+		return render_template("reserve.html", buddyRequests=buddyRequests)
+
+	else:
+		return render_template("reserve.html", buddyRequests=buddyRequests)
 
 @app.route('/buddy')
 def buddy():
@@ -43,34 +70,6 @@ def ali():
 @app.route('/raven')
 def raven():
 	return render_template('raven.html')
-
-buddies=[]
-@app.route('/processRequest',methods=['GET','POST'])
-def processRequest():
-	if request.method == 'GET':
-		a = request.form['activity']
-		#who = request.form['who']
-		now = datetime.now()
-		x = {'activity':a,'time':now}
-		buddies.insert(0,x) # add msg to the front of the list
-		print(buddies)
-		return render_template("chat.html",messages=messages)
-	else:
-		return render_template("chat.html",messages=[])
-
-
-messages=[]
-@app.route('/chat',methods=['GET','POST'])
-def chat():
-	if request.method == 'POST':
-		msg = request.form['msg']
-		who = request.form['who']
-		now = datetime.now()
-		x = {'msg':msg,'now':now,'who':who}
-		messages.insert(0,x) # add msg to the front of the list
-		return render_template("chat.html",messages=messages)
-	else:
-		return render_template("chat.html",messages=[])
 
 
 if __name__ == '__main__':
